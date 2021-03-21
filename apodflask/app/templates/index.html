@@ -1,16 +1,16 @@
-<html>
-    <head>
-        <title>APOD - {{ title }}</title>
-    </head>
-    <body>
-        <h1>{{ title }}</h1>
+{% extends "base.html" %}
 
-        <div>
-            <p>{{ date }}</p>
+# block for rendering date
+{% block date %}
+    <p>{{ date }}</p>
+{% endblock %}
 
-            <img src="{{ url }}">
-            <p>{{ explanation }}</p>
-        </div>
-        
-    </body>
-</html>
+# block for rendering image 
+{% block image %}
+    <img src="{{ url }}"> 
+{% endblock %}
+
+# block for rendering description
+{% block description %}
+    <p>{{ explanation }}</p>
+{% endblock %}

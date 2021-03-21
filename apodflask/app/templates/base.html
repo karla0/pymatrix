@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% if title %}
+        <title>APOD - {{ title }}</title>
+        {% else %}
+        <title>APOD</title>
+        {% endif %}
+    </head>
+    <body>
+     <div>
+         <p>{{ title }}</p>
+        {% block date %}{% endblock %}
+        {% block image %}{% endblock %}
+        {% block description %}{% endblock %}
+    </div>
+    </body>
+</html>
