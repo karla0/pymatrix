@@ -10,14 +10,19 @@ APOD Navigator
 {% endif %}
 {% endblock %}
 
+{% block scripts%}
+<script src="https://kit.fontawesome.com/25e25236ba.js" crossorigin="anonymous"></script>
+{{super()}}
+{% endblock %}
+
 {% block navbar %}
     <nav class="nav-bar navbar-default">
         <p>APOD Navigator: </p>
         <!-- function to get an image that iterates - 1 day 
         showing the previous day than current index -->
-        <a href="#">And Beyond...</a>
-        <a href="#">Yesterday</a>
-        <a href="#">Today</a>
+        <a href="#"><span style="color:#7f0799;" class="fas fa-star-and-crescent"></span>And Beyond...</a>
+        <a href="#"><span style="color: #9649cb;" class="fas fa-moon"></span>Yesterday</a>
+        <a href="#"><span style="color: #afbbf2;" class="fas fa-sun"></span>Today</a>
     </nav>
 {% endblock %}
 
