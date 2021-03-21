@@ -6,13 +6,14 @@
 {% endblock %}
 
 <!-- block for rendering image title -->
+<!-- TODO I want to see if i can add index starting from 0 today going up until however far down api goes -->
 {% block title %}
-    <p>{{ image.title }}</p>
+    APOD - {{ image.title }}
 {% endblock %}
 
 <!-- block for rendering image  -->
 {% block image %}
-    <img src="{{ url }}"> 
+    <img src="{{ image_url }}"> 
 {% endblock %}
 
 <!-- block for rendering image description -->

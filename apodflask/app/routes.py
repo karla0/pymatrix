@@ -19,4 +19,4 @@ def picture_of_day():
     else:
         url = data.get('url')
 
-    return render_template('today/today.html', image=data, url=url)
+    return render_template('today/today.html', image=data, image_url=url)
