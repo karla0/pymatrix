@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+<!-- block for rendering image date -->
+{% block date %}
+    <p>{{ image.date }}</p>
+{% endblock %}
+
+<!-- block for rendering image title -->
+{% block title %}
+    <p>{{ image.title }}</p>
+{% endblock %}
+
+<!-- block for rendering image  -->
+{% block image %}
+    <img src="{{ url }}"> 
+{% endblock %}
+
+<!-- block for rendering image description -->
+{% block description %}
+    <p>{{ image.explanation }}</p>
+{% endblock %}

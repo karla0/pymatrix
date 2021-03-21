@@ -9,7 +9,12 @@
     </head>
     <body>
      <div>
-         <p>{{ title }}</p>
+        <nav>
+            <p>APOD Navigator: </p>
+            <a href="#">Today</a>
+            <a href="#">Yesterday</a>
+        </nav>
+        {% block title%}{% endblock %}
         {% block date %}{% endblock %}
         {% block image %}{% endblock %}
         {% block description %}{% endblock %}
