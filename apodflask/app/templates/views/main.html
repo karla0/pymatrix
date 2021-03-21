@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+<!-- block for rendering image date -->
+{% block date %}
+    <div>
+    <span style="color: #CFBAE1;" class="fas fa-calendar-alt"></span>
+    <p>{{ image.date }}</p>
+    </div>
+{% endblock %}
+
+<!-- block for rendering image title -->
+<!-- TODO I want to see if i can add index starting from 0 today going up until however far down api goes -->
+{% block image_title %}
+    APOD - {{ image.title }}
+{% endblock %}
+
+<!-- block for rendering image  -->
+{% block image %}
+    <img src="{{ image_url }}"> 
+{% endblock %}
+
+<!-- block for rendering image description -->
+{% block description %}
+    <p>{{ image.explanation }}</p>
+{% endblock %}

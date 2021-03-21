@@ -1,11 +1,9 @@
 {% extends 'bootstrap/base.html' %}
-
+<!-- Defines the title in bootstrap html if there is one defined from script -->
 {% block title%}
 {% if title %}
-<!-- Defines the title in bootstrap html if there is one defined from script -->
 APOD - {{ title }}
 {% else %}
-<!-- Default title -->
 APOD Navigator
 {% endif %}
 {% endblock %}
@@ -21,13 +19,14 @@ APOD Navigator
         <!-- function to get an image that iterates - 1 day 
         showing the previous day than current index -->
         <a href="#"><span style="color:#7f0799;" class="fas fa-star-and-crescent"></span>And Beyond...</a>
-        <a href="#"><span style="color: #9649cb;" class="fas fa-moon"></span>Yesterday</a>
-        <a href="#"><span style="color: #afbbf2;" class="fas fa-sun"></span>Today</a>
+        <a href="{{ url_for('picture_of_yesterday')}}"><span style="color: #9649cb;" class="fas fa-moon"></span>Yesterday</a>
+        <a href="{{ url_for('picture_of_day')}}"><span style="color: #afbbf2;" class="fas fa-sun"></span>Today</a>
     </nav>
 {% endblock %}
 
 {% block content %}
     <div class="container">
+        {% block image_title%}{% endblock %}
         {% block date %}{% endblock %}
         {% block image %}{% endblock %}
         {% block description %}{% endblock %}
