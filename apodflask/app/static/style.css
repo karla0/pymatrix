@@ -1,0 +1,21 @@
+body {
+    background-color: navy;
+    text-align: center;
+}
+
+#apod_header {
+    background-color: rebeccapurple;
+}
+
+#content-div {
+    background-color: rosybrown;
+}
+
+#content {
+    background-color: royalblue;
+}
+
+#image {
+    max-width: 100%;
+    height: auto;
+}

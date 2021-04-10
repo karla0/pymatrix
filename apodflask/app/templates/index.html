@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}"
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>APOD</title>
+</head>
+
+<body class="body">
+    <div class="container-fluid" id="content-div">
+        <h1 id="apod_header">APOD</h1>
+        <div class="container">
+            <div class="row" id="content">
+                <div class="col">
+                    <p id="image-title">{{ image.title }}</p>
+                </div>
+                <div class="col">
+                    <p id="image-date">{{ image.date }}</p>
+                </div>
+                <div class="col container-fluid">
+                    <img id="image" src="{{ image_url }}"> 
+                    <p id="image-explanation">{{ image.explanation }}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- <a href="{{ url_for('picture_of_day')}}">Hello</a> -->
+    </div>
+</body>
+
+</html>

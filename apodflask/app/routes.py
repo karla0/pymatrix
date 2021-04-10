@@ -4,9 +4,7 @@ import json
 from flask import render_template
 import requests
 from app import app
-
-
-API_KEY = 'MzabBeAiCVcA8ZHLnP5a132aNRYMTevN2w3nPH5s'
+from app.config import API_KEY
 
 def set_image_url(data):
     if data.get('hdurl'):
@@ -27,7 +25,7 @@ def picture_of_day():
     # then url unsure if this is that necessary yet but just in case.
     url = set_image_url(data)
 
-    return render_template('views/main.html', image=data, image_url=url)
+    return render_template('index.html', image=data, image_url=url)
 
 @app.route('/yesterday')
 def picture_of_yesterday():
@@ -41,5 +39,10 @@ def picture_of_yesterday():
     url = set_image_url(data)
     
     return render_template('views/main.html', image=data, image_url=url)
+
+
+@app.route('/test')
+def test_html():
+    return render_template('index.html')
 
 # TODO Create and Beyond funtion which will take the current object that it contains and subtracts 1 from the date and requests the next picture

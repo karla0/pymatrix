@@ -12,3 +12,10 @@ Endpoints
 Parameters needed:
 yesterday's date in example format YYYY-MM-DD. 
 example: 03-20-21
+
+DEV TIPS: 
+
+- to activate virtualenv source env_apodflask/bin/activate
+
+- enable responseive design in safari
+- reset caches to update css, `hold down shift and reload page`
