@@ -24,8 +24,14 @@ def picture_of_day():
     # two urls are included 1 HD and 1 non hd will look for hdurl first
     # then url unsure if this is that necessary yet but just in case.
     url = set_image_url(data)
+    media_type = data.get('media_type')
+    if media_type == "video":
+        video = True
+        print(media_type)
+    elif media_type != "video":
+        video = False
 
-    return render_template('index.html', image=data, image_url=url)
+    return render_template('index.html', image=data, image_url=url, video = video)
 
 @app.route('/yesterday')
 def picture_of_yesterday():
