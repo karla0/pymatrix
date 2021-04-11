@@ -14,7 +14,7 @@
 <body class="container-fluid">
 
     <div class="row">
-        <div class="col">
+        <div class="container-fluid col">
             <div class="row">
                 <div class="col">
                     <div class="container d-flex justify-content-center">
@@ -31,10 +31,10 @@
                                         <div class="collapse navbar-collapse" id="navbarContent">
                                             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="#">Today</a>
+                                                    <a class="nav-link" href="{{ url_for('picture_of_day')}}">Today</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="#">Yesterday</a>
+                                                    <a class="nav-link" href="{{ url_for('picture_of_yesterday')}}">Yesterday</a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="#">Beyond</a>
@@ -53,9 +53,21 @@
                     <div id="tester-div" class="container-fluid"">
                         <div class=" row">
                         <div class="container-fluid">
-                            <div id="title-div" class="row d-flex flex-row justify-content-center">
-                                <p class="d-inline-flex p-2 bd-highlight">{{ image.title }}:</p>
-                                <p class="d-inline-flex p-2 bd-highlight">{{ image.date }}</p>
+                            <div id="title-div" class="row mt-2">
+                                <!-- <div class="col"></div> -->
+                                <div class="col pr-0 pt-1 pb-1">
+                                    <div  class="d-flex align-items-stretch justify-content-end">
+                                        <p id="img-title" >{{
+                                            image.title }}</p>
+                                    </div>
+
+
+                                </div>
+                                <div class="col pl-0 pt-1 pb-1 ml-1">
+                                    <div class="d-flex align-items-stretch justify-content-start">
+                                        <p class="text-muted">{{ image.date }}</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -68,8 +80,10 @@
                                         allowfullscreen></iframe>
                                 </div>
                                 {% else %}
+                                <div class="justify-content-center" id="img-div">
                                 <img src="{{ image_url }}"
-                                    class="img-fluid justify-content-center p-3 bg-white  rounded" id="image">
+                                    class="img-fluid justify-content-center p-3 rounded" id="image">
+                                    </div>
                                 {% endif %}
                             </div>
                         </div>
@@ -81,30 +95,26 @@
                                     image.copyright }}</cite></footer>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row overflow-auto" id="img-desc">
                         <div class="col">
-                            <p id="img-desc" class="text-center text-justify"">{{ image.explanation }}</p>
-                            </div>
+                            <p id="description" class="text-center text-justify">{{ image.explanation }}</p>
                         </div>
                     </div>
+                </div>
             </div>
-            
-            
         </div>
     </div>
 
     <script src=" https://code.jquery.com/jquery-3.4.1.slim.min.js"
-                                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-                                crossorigin="anonymous">
-                                </script>
-                                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-                                    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-                                    crossorigin="anonymous"></script>
-                                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-                                    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-                                    crossorigin="anonymous"></script>
-                                <script src="https://kit.fontawesome.com/25e25236ba.js"
-                                    crossorigin="anonymous"></script>
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/25e25236ba.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

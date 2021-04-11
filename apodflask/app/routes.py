@@ -43,8 +43,16 @@ def picture_of_yesterday():
     response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={API_KEY}&date={yesterday}') 
     data = response.json()
     url = set_image_url(data)
-    
-    return render_template('views/main.html', image=data, image_url=url)
+
+    # TODO put into a function
+    media_type = data.get('media_type')
+    if media_type == "video":
+        video = True
+        print(media_type)
+    elif media_type != "video":
+        video = False
+
+    return render_template('index.html', image=data, image_url=url, video=video)
 
 
 @app.route('/test')
