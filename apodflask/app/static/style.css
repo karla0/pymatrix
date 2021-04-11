@@ -1,21 +1,53 @@
 body {
-    background-color: navy;
-    text-align: center;
+    background-color: #001524;
+    padding-top: 65px; 
+
 }
 
-#apod_header {
-    background-color: rebeccapurple;
+#apod-header {
+    color: white;
 }
 
-#content-div {
+/* #content-div {
     background-color: rosybrown;
-}
+} */
 
 #content {
     background-color: royalblue;
     height: 100%;
 }
 
+#star-moon-fa {
+    color: purple;
+}
+
+#star-fa {
+    color: yellow;
+}
+
+#moon-fa {
+    color: #9649cb;
+}
+
+#sun-fa {
+    color: #afbbf2;
+}
+
+#navigator {
+    background-color: #15616D;
+    margin-bottom: 5%;
+}
+
+#navigator-link {
+    margin: 2%;
+    /* background-color: violet; */
+    color: white;
+}
+
+#tester-div {
+    background-color: tomato;
+    
+}
 /* #image {
 
     
@@ -39,3 +71,19 @@ body {
     padding: 10px;
     
 }
+
+#jumbo {
+
+    /* background-color: tomato; */
+    background-color: #FFECD1;
+}
+
+#jumbo-div {
+    background-color: turquoise;
+}
+
+#image-explanation {
+    color: white;
+    padding: 10%;
+}
+

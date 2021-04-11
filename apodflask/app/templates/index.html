@@ -4,46 +4,73 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='bootstrap.min.css') }}"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}" <meta name="viewport"
         content="width=device-width, initial-scale=1">
-
     <title>APOD</title>
 </head>
 
-<body class="body">
-    <div class="container-fluid" id="content-div">
+<body class="container-fluid">
+    <div class="container" >
         <div class="row">
             <div class="col">
-                <p class="h1">APOD</p>
+                <div class="fixed-top">
+                    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                        <a class="navbar-brand" href="#">APOD</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+                            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarContent">
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Today</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Yesterday</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Beyond</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
             </div>
         </div>
-        <div class="jumbotron">
+    </div>
+        <div id="tester-div" class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <p class="h5">{{ image.title }} - <span class="text-muted">{{ image.date }}</span></p>
+                    <p class="h4">{{ image.title }}</p>
                 </div>
-            </div>
-            <div class="row"> 
                 <div class="col">
-
-                    <img src="{{ image_url }}" class="img-fluid" id="image">
+                    <p class="test-muted">{{ image.date }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <img src="{{ image_url }}" class="img-fluid p-3 mb-5 bg-white  rounded" id="image">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
                     <footer id="copyright" class="blockquote-footer"><cite title="{{ image.copyright }}">{{
-                            image.copyright}}</cite></footer>
-
+                            image.copyright }}</cite></footer>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="test-justify">{{ image.explanation }}</p>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <p id="image-explanation">{{ image.explanation }}</p>
-            </div>
-        </div>
 
-        <!-- <a href="{{ url_for('picture_of_day')}}">Hello</a> -->
-    </div>
+
+
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -53,6 +80,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/25e25236ba.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
